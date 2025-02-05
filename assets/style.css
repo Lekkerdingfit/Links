@@ -76,8 +76,13 @@ color:blue;
     background-size:200px 200px;
     background-repeat: repeat;
 }
+img{
+	width: 50px;;
+}
+
 h1{
 font-family:var(--font);
+margin-top:-3rem;
 font-weight: 400;;
 color:greenyellow;
 margin-left: 18rem;
