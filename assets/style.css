@@ -36,11 +36,12 @@ img{
 	justify-content: center;
 }
 h1{
-font-size: calc(var(--font-size)*5);
+font-size: calc(var(--font-size)*4);
 font-family:var(--font);
 font-weight: 400;;
 color:white;
-text-align: center;
+padding:1rem;
+line-height: 4rem;
 }
 
 h2{
