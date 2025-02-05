@@ -126,8 +126,8 @@ h2{
 
 ul{
 	display:flex;
-	gap:3rem;
-	
+	gap:5rem;
+	flex-direction:row;
 
 }
 
@@ -148,14 +148,13 @@ svg{
 
 .image-block img{
 
-	/* display:block; */
+	display:block;
 	width:100%;
 	height:80%;
 	border-radius: 50%;
 	overflow: hidden;
-	
-	/* height:100%; */
-	/* object-fit:cover; */
+	aspect-ratio: 2/1;
+	object-fit:cover;
 }
 
 footer{
