@@ -220,10 +220,12 @@ li h3{
 	font-family:var(--font);
 	padding:10px;
 	margin: 1rem;
-	max-width: 500px;
+	max-width: 400px;
 	background-color: greenyellow;
 	color:blue;
 	filter:drop-shadow(7px 7px 7px rgba(3, 2, 2, 0.25));
+	border-radius: 7px;
+	border : 3px solid blue;
 }
 
 h1{

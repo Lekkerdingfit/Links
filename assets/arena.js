@@ -40,7 +40,9 @@ function renderBlock(block) {
         channelBlocks.insertAdjacentHTML("beforeend", linkItem);
     } else if (block.class === "Image") {
         let imageItem = `
-            <li><img class="image-box" src="${block.image.original.url}" alt=""></li>
+            <li>
+			<h3>${ block.title || 'Image'}</h3>
+			<img class="image-box" src="${block.image.original.url}" alt=""></li>
         `;
         channelBlocks.insertAdjacentHTML("beforeend", imageItem);
     } else if (block.class === "Text") {
@@ -53,7 +55,7 @@ function renderBlock(block) {
         if (attachment.includes("video")) {
             let videoItem = `
                 <li>
-                    
+                    <h3>${ block.title || 'video'}</h3>
                     <video class="video-box" controls src="${block.attachment.url}"></video>
                 </li>
             `;
@@ -61,7 +63,7 @@ function renderBlock(block) {
         } else if (attachment.includes("audio")) {
             let audioItem = `
                 <li>
-                    
+                    <h3>${ block.title || 'audio'}</h3>
                     <audio class ="audio-box" controls src="${block.attachment.url}"></audio>
                 </li>
             `;
@@ -72,7 +74,7 @@ function renderBlock(block) {
         if (embed.includes("video")) {
             let linkedVideoItem = `
                 <li>
-                    
+                    <h3>${ block.title || 'Media'}</h3>
                     <div class="linkedvideo-box">${block.embed.html}</div>
                 </li>
             `;
