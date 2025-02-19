@@ -57,6 +57,7 @@ function renderBlock(block) {
                 <li>
                     <h3>${ block.title || 'video'}</h3>
                     <video class="video-box" controls src="${block.attachment.url}"></video>
+					
                 </li>
             `;
             channelBlocks.insertAdjacentHTML("beforeend", videoItem);
