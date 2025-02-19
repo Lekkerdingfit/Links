@@ -80,9 +80,11 @@ footer{
 	margin:10px;
 }
 
-#channel-description{
-	text-align: left;
-}
+
+
+
+
+
 
 
 @media (min-width: 1280px){
@@ -96,20 +98,27 @@ width: 100%;
 	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="50" cy="50" r="50" fill="blue"/></svg>');
     background-size:200px 200px;
     background-repeat: repeat;
+	margin-bottom: 2rem;
 }
-img{
-	width: 50px;;
-}
+
 .linkedvideo-box,
 .image-box,
-.video-box{
-	width:100%;
-	max-width:600px;
+.video-box,
+{
+	/* width:100%; */
+	/* max-width:600px; */
 	height:auto;
 	display:block;
-	margin: 0 auto 20px;
+	margin: 0 auto 30px;
+	
 }
-.text-box{
+.audio-box{
+	margin:0 auto 300px;
+
+}
+
+/* .text-box  {
+	color: black;
 	text-align: left;
 	max-width: 500px;
 	display: block;
@@ -119,22 +128,38 @@ img{
 	padding: 10px;
 	box-sizing: border-box;
 	line-height: 1rem;
+	display: inline-block;
 
-}
-
+} */
 
 
 .linkedvideo-box iframe{
 	width:100%;
-	max-width: 800px;
-	height:450px;
+	height:600px;
+	max-width: 600px;
+	object-fit: cover;
+	aspect-ratio: 1/1;
+	margin-left:120px;
+}
+
+
+#channel-blocks{
+	display: grid;
+	/* grid-template-columns: repeat(4,1fr); */
+	gap: 30px;
+	/* justify-items: center; */
+	padding-top:20px;
+	padding-right:40rem;
 	
 }
-#channerl-blocks{
-	display: flex;
-	flex-wrap: wrap;
+
+#channel-count{
+	text-align: center;
+	max-height: 400px;
+	object-fit: cover;
 }
-#channel-blocks img, video{
+
+#channel-blocks img, video, audio{
 	width:100%;
 	object-fit: cover;
 	aspect-ratio: 1/1;
@@ -143,12 +168,28 @@ img{
 	height:auto;
 	display:block;
 	margin:0 auto;
+	
 
 }
 #channel-description{
-	text-align: left;
-	margin-bottom: 3rem;
+	background-color: blue;
+	display:block;
+	color:white;
+	text-align: center;
+	justify-content: center;
+	max-width:600px;
+	padding:20px;
+	margin: 5rem;
+	box-sizing: border-box;
+	border-radius: 20px;
+	border: 3px solid yellowgreen;
+	line-height: 1.3;
 	
+}
+
+#channel-title{
+	background-color: greenyellow;
+
 }
 
 #channel-blocks li{
@@ -156,32 +197,61 @@ img{
 	list-style:none;
 }
 
+#channel-blocks p {
+	background-color: blue;
+	text-align: left;
+	max-width: 500px;
+	display: block;
+	width:100%;
+	margin:1rem;
+	padding: 14px;
+	z-index: 0;
+	box-sizing: border-box;
+	border : 3px solid greenyellow;
+	border-radius: 7px;
+	line-height: 1.5;
+	display: inline-block;
+	filter:drop-shadow(7px 7px 7px rgba(3, 2, 2, 0.25));
+}
+
+
+
+li h3{
+	font-family:var(--font);
+	padding:10px;
+	margin: 1rem;
+	max-width: 500px;
+	background-color: greenyellow;
+	color:blue;
+	filter:drop-shadow(7px 7px 7px rgba(3, 2, 2, 0.25));
+}
+
 h1{
 font-family:var(--font);
-margin-top:-3rem;
+margin-top:-5rem;
 margin-bottom: 3rem;
 font-weight: 400;;
-color:greenyellow;
-margin-left: 18rem;
-font-size: calc(var(--font-size)*7);
+color:blue;
+-webkit-text-stroke-color: greenyellow;
+-webkit-text-stroke-width: 4px;
+margin-left: 8rem;
+font-size: calc(var(--font-size)*10);
 
 }
 
 h2{
-	width: 800px;
+	width: 600px;
 	height: 200px;
-	padding-top:1rem;
-	margin:20px;
+	padding:2rem;
+	margin:25px;
 	line-height: 4rem;
-	/* text-align: center; */
+	
 	border-radius: 50%;
-	justify-content: center;
+	font-family:var(--font);
 	display:flex;
-	align-items: center;
-	border: 3px solid white;
+	border: 5px solid white;
 	color:white;
-	margin:20px auto;
-	font-size: calc(var(--font-size)*4);
+	font-size: calc(var(--font-size)*3);
 }
 
 ul{
@@ -190,7 +260,10 @@ ul{
 	flex-direction:row;
 
 }
-
+a{
+	position:relative;
+	z-index: 10;
+}
 li{
 	display:flex;
 	flex-direction: column;
@@ -198,6 +271,7 @@ li{
 	/* text-align: center; */
 	list-style: none;
 }
+
 
 
 svg{
@@ -218,6 +292,121 @@ svg{
 	aspect-ratio: 2/1;
 	object-fit:cover;
 } */
+.scene {
+    width: 80vw;
+    height: 80vw;
+    perspective: 1000px;
+    margin: 0 auto;
+	position: fixed;
+	top:0;
+}
+
+.cube {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+	/* transform: rotateX(0deg) rotateY(0deg); */
+    animation: rotateCube 10s infinite linear;
+	transform-origin: center;
+	margin:0 auto;
+	position: fixed;
+	left:60%;
+	top:20%;
+	transform: translateX(-50%);
+}
+
+@keyframes rotateCube {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(255, 255, 255, 0.3); */
+    /* border: 2px solid; */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	transform: translate(-50%, -50%);
+}
+
+.front { transform: translateZ(250px); }
+    .back { transform: rotateY(180deg) translateZ(250px); }
+    .right { transform: rotateY(90deg) translateZ(250px); }
+    .left { transform: rotateY(-90deg) translateZ(250px); }
+    .top { transform: rotateX(90deg) translateZ(250px); }
+    .bottom { transform: rotateX(-90deg) translateZ(250px); }
+
+	.scene2 {
+		width: 500px;
+		height: 500px;
+		perspective: 800px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.cube2 {
+		width: 300px;
+		height: 300px;
+		position: relative;
+		transform-style: preserve-3d;
+		transform: rotateX(0deg) rotateY(0deg);
+		animation: rotateCube 14s infinite linear; 
+	}
+
+	.cube2 .face2 { 
+		position: absolute;
+		width:100%;
+		height:100%;
+		display:flex;
+		cursor:pointer;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.3s ease, scale 0.3s ease;
+	}
+	
+	.face2 img {
+		transition: transform 0.2s ease;
+		width: 100%;
+		height: 100%;
+	object-fit: fill;
+		
+	}
+	
+	
+	/* Positioning cube faces */
+	.front2  { transform: translateZ(150px); }
+	.back2   { transform: rotateY(180deg) translateZ(150px); }
+	.left2   { transform: rotateY(-90deg) translateZ(150px); }
+	.right2  { transform: rotateY(90deg) translateZ(150px); }
+	.top2    { transform: rotateX(90deg) translateZ(150px); }
+	.bottom2 { transform: rotateX(-90deg) translateZ(150px); }
+	
+	/* Cube animation */
+	
+	@keyframes rotateCube {
+		from { transform: rotateX(0deg) rotateY(0deg); }
+		to { transform: rotateX(360deg) rotateY(360deg); }
+	}
+	
+	
+
+section{
+	margin-bottom: 70px;
+}
+
+
+
 
 footer{
 	display:flex;
@@ -228,4 +417,23 @@ footer{
 	margin-bottom:2rem;
 	margin:10px;
 }
+
+.go-top{
+	position:fixed;
+	bottom:2rem;
+	right: 2.5rem;
+	font-size:1.3rem;
+	background-color: greenyellow;
+	color:blue;
+	border: 4px solid blue;
+	border-radius: 50%;
+	padding:1rem;
+	width:70px;
+	height:70px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+
+
+
 }
