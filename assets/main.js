@@ -3,25 +3,19 @@
 function updateCubeFaces() {
     const cubeFaces = ["front", "back", "right", "left", "top", "bottom"];
     
-    cubeFaces.forEach((face, index) => {
-        const faceElement = document.querySelector(`#${face}`);
-        const imgSrc = images[(imageIndex + index) % images.length]; // 각 면에 다른 이미지 적용
-        faceElement.style.backgroundImage = `url(${imgSrc})`;
-        faceElement.style.backgroundSize = "cover";
-        faceElement.style.backgroundPosition = "center";
+    cubeFaces.forEach((face) => {
+        if (images.length > 0) {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const imgSrc = images[randomIndex];
+            const faceElement = document.querySelector(`#${face}`);
+            faceElement.style.backgroundImage = `url(${imgSrc})`;
+			faceElement.style.backgroundSize = "cover";
+
+        }
     });
 }
 
-// Detect scroll events to change cube images(with debounce)
-window.addEventListener("scroll", () => {
-    const now = Date.now();
-    if (now - lastUpdateTime > updateInterval) {
-        imageIndex = (imageIndex + 1) % images.length;
-        updateCubeFaces();
-        lastUpdateTime = now;
-    }
-});
-
+setInterval(updateCubeFaces, updateInterval);
 
 
 
