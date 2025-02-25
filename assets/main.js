@@ -19,8 +19,3 @@ setInterval(updateCubeFaces, updateInterval);
 
 
 
-
-
-
-
-

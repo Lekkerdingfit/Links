@@ -61,7 +61,7 @@ ul{
 }
 	
 li>audio{
-	width:130%;
+	width:100%;
 	height:400px;
 	background-color: blue;
 	padding:0 10px 20px 10px;
@@ -85,7 +85,7 @@ li>audio{
 	max-width: 400px;
 	height:auto;
 	display:block;
-	margin:0 auto;
+	margin:8px;
 	
 }
 
@@ -132,6 +132,7 @@ header{
 	z-index: 1000;
 
 }
+
 
 .cube {
     width: 250px;
@@ -367,6 +368,7 @@ width: 100%;
 
 }
 
+
 /* .text-box  {
 	color: black;
 	text-align: left;
@@ -400,9 +402,11 @@ width: 100%;
 	/* justify-items: center; */
 	padding-top:80rem;
 	padding-right:40rem;
-	max-width: 1000px;
+	max-width: 1200px;
 	
 }
+
+
 
 #channel-blocks li:nth-child(3n+1) {
     transform: skewX(18deg);
@@ -432,9 +436,16 @@ width: 100%;
 	height:auto;
 	display:block;
 	margin:0 auto;
+	filter: grayscale(100%);
+	transition: filter 0.2s ease-in-out;
+	cursor:pointer;
+	z-index: 1;
 	
-
 }
+#channel-blocks img:hover {
+    filter: grayscale(0%);
+}
+
 #channel-description{
 	background-color: blue;
 	display:block;
@@ -448,7 +459,7 @@ width: 100%;
 	border-radius: 20px;
 	border: 4px solid greenyellow;
 	line-height: 1.3;
-	
+	height:auto;
 }
 
 #channel-description:empty{
@@ -457,6 +468,11 @@ width: 100%;
 #channel-blocks p:empty{
 	display:none;
 }
+
+
+/* #channel-blocks p.text-created{
+	display:none;
+} */
 
 #channel-title{
 	background-color: greenyellow;
@@ -480,6 +496,7 @@ width: 100%;
 	max-width: 500px;
 	display: block;
 	width:100%;
+	height:auto;
 	margin:1rem;
 	padding: 10px;
 	margin-bottom: 7px;
@@ -490,11 +507,6 @@ width: 100%;
 	line-height: 1.5;
 	display: inline-block;
 	filter:drop-shadow(7px 7px 7px rgba(3, 2, 2, 0.25));
-}
-
-
-#channel-block p:empty{
-	display: none;
 }
 
 
@@ -513,6 +525,11 @@ li h3{
 	
 }
 
+
+li>audio{
+	filter:none;
+	background-color: greenyellow;
+}
 
 h1{
 font-family:var(--font);
@@ -586,7 +603,7 @@ svg{
 } */
 .scene {
     width: 100vw;
-    height: 100vw;
+    height: 50vw;
     perspective: 1000px;
     margin: 0 auto;
 	position: relative;
@@ -612,7 +629,7 @@ header{
 	position: absolute;
 	top:0%;
 	left:35%;
-	z-index:1000;
+	z-index:1;
 	transform: translate(-50%.-50%);
 }
 
