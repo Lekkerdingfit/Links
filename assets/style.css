@@ -167,7 +167,7 @@ nav{
 button{
 	font-size:calc(var(--font-size)*1.4);
 	padding: 1rem;
-	margin-left:1rem;
+	margin-left:-1rem;
 	background-color: blue;
 	color:greenyellow;
 	cursor:pointer;
