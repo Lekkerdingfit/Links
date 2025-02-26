@@ -28,7 +28,7 @@ function renderBlock(block) {
 
     if (block.class === "Link") {
         let linkItem = `
-            <li>
+            <li class="link-block">
                 <picture>
                     <img src="${block.image.original.url}" alt="${block.title}">
                 </picture>
@@ -40,13 +40,14 @@ function renderBlock(block) {
         channelBlocks.insertAdjacentHTML("beforeend", linkItem);
     } else if (block.class === "Image") {
         let imageItem = `
-            <li>
+            <li class="image-block">
 			<h3>${ block.title || 'Image'}</h3>
 			<img class="image-box" src="${block.image.original.url}" alt=""></li>
         `;
         channelBlocks.insertAdjacentHTML("beforeend", imageItem);
     } else if (block.class === "Text") {
         let textItem = `
+		<li class="text-block">
             <p class="text-box">${block.content_html}</p>
              <p class="text-created"> Created on ${block.created_at}</p>`;
         channelBlocks.insertAdjacentHTML("beforeend", textItem);
@@ -54,7 +55,7 @@ function renderBlock(block) {
         let attachment = block.attachment.content_type;
         if (attachment.includes("video")) {
             let videoItem = `
-                <li>
+                <li class="video-block">
                     <h3>${ block.title || 'video'}</h3>
                     <video class="video-box" controls src="${block.attachment.url}"></video>
 					
@@ -63,7 +64,7 @@ function renderBlock(block) {
             channelBlocks.insertAdjacentHTML("beforeend", videoItem);
         } else if (attachment.includes("audio")) {
             let audioItem = `
-                <li>
+                <li class="audio-block">
                     <h3>${ block.title || 'audio'}</h3>
                     <audio class ="audio-box" controls src="${block.attachment.url}"></audio>
                 </li>
@@ -74,7 +75,7 @@ function renderBlock(block) {
         let embed = block.embed.type;
         if (embed.includes("video")) {
             let linkedVideoItem = `
-                <li>
+                <li class="video-block">
                     <h3>${ block.title || 'Media'}</h3>
                     <div class="linkedvideo-box">${block.embed.html}</div>
                 </li>
