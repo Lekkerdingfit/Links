@@ -40,22 +40,23 @@ ul{
 
 }
 #channel-description{
-	/* background-color: blue; */
+	
 	color:greenyellow;
 	text-align: center;
 	justify-content: center;
-	/* width: 250px; */
 	padding-left:1rem;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	/* font-weight: bold; */
 	padding: 3rem;
-	/* border-radius: 40px; */
-	/* border: 3px solid white; */
 	line-height: 1.5;
 	font-size:calc(var(--font-size)*1.4);
 }
 
- /* javascript add show class */
+/*Filter list*/
+
+/* I wanted to make filter list and show up only selected media */
+/* I found this tool: our Demo mode and other folk's help */
+/* I understand about how connect with javascript but it is hard to connected with desktop mode. it has errors inside */
+ 
  .show-audio{
 	li {
 		display:none;
@@ -162,7 +163,11 @@ nav{
 }
 
 
+/* Moral button*/
 
+/* I wanted to make pop-up moral forr channel-description */
+/* I found this tool: https://developer.mozilla.org/en-US/play, */
+/* I understans how it works with Javasrtipt and good to understand what is "Dialog" is. */
 
 button{
 	font-size:calc(var(--font-size)*1.4);
@@ -171,7 +176,6 @@ button{
 	background-color: blue;
 	color:greenyellow;
 	cursor:pointer;
-	/* border-radius: 40px; */
 	border:3px solid white;
 	font-family:var(--font3);
 	
@@ -255,6 +259,11 @@ li>audio{
 }
 
 /* image_ Skew w different angle */
+
+/* I wanted to change skew for blocks because of the consistancy! */
+/* I found this tool: https://css-tricks.com/almanac/properties/t/transform/,https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child */
+/* this skew and nth-child is easy to make it at once. */
+
 #channel-blocks li:nth-child(4n+1) {
     transform: skewX(10deg);
 }
@@ -277,7 +286,6 @@ li>audio{
 	width:300px;
 	padding:10px;
 	margin-left:4rem;
-	/* box-sizing: content-box; */
 	filter:drop-shadow(7px 7px 7px rgba(3, 2, 2, 0.25));
 
 	
@@ -298,13 +306,16 @@ header{
 
 }
 
+/* Rotated cube*/
+
+/* I wanted to make rotated cube with random images */
+/* I found this tool: https://labex.io/tutorials/css-3d-rotating-cube-165641, and CHATGPT */
+/* I understans how it works and good to understand based on multiple elements such as height, width and angles etc. */
 
 .cube {
     width: 250px;
     height: 250px;
-    /* position: relative; */
     transform-style: preserve-3d;
-	/* transform: rotateX(0deg) rotateY(0deg); */
     animation: rotateCube 12s infinite linear;
 	transform-origin: center;
 	margin:0 auto;
@@ -312,7 +323,7 @@ header{
 	top:50%;
 	left:0%;
 	z-index:1000;
-	transform: translate(-50%.-50%);
+	transform: translate(-50%, -50%);
 }
 
 @keyframes rotateCube {
@@ -331,8 +342,6 @@ header{
     position: absolute;
     width: 120%;
     height: 120%;
-    /* background: rgba(255, 255, 255, 0.3); */
-    /* border: 2px solid; */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -376,16 +385,6 @@ li h3{
 	
 }
 
-
-/* .image-block img{
-	width:100%;
-	height:80%;
-	border-radius: 50%;
-	aspect-ratio: 2/3;
-	overflow: hidden;
-	object-fit: cover;
-	justify-content: center;
-} */
 
 h1{
 font-size: calc(var(--font-size)*5.7);
@@ -449,15 +448,15 @@ footer{
 
 
 
-
 /* Desktop mode */
 
 
 @media (min-width: 1280px){
+
 body{
-background-color: greenyellow;
-color:white;
-width: 100%;
+	background-color: greenyellow;
+	color:white;
+	width: 100%;
 	/* margin:10rem; */
 	font-size: 20px;
 	margin:3rem;
@@ -466,14 +465,12 @@ width: 100%;
     background-repeat: repeat;
 	margin-bottom: 2rem;
 	overflow:visible;
-}
 
+}
 .linkedvideo-box,
 .image-box,
-.video-box,
+.video-box
 {
-	/* width:100%; */
-	/* max-width:600px; */
 	height:auto;
 	display:block;
 	margin: 0 auto 30px;
@@ -485,21 +482,6 @@ width: 100%;
 
 }
 
-
-/* .text-box  {
-	color: black;
-	text-align: left;
-	max-width: 500px;
-	display: block;
-	width:100%;
-	margin: 0 auto;
-	font-family:var(--font);
-	padding: 10px;
-	box-sizing: border-box;
-	line-height: 1rem;
-	display: inline-block;
-
-} */
 
 
 .linkedvideo-box iframe{
@@ -516,12 +498,75 @@ width: 100%;
 	display: grid;
 	grid-template-columns: repeat(3,1fr);
 	gap: 300px;
-	/* justify-items: center; */
-	padding-top:80rem;
+	padding-top:10rem;
 	padding-right:40rem;
 	max-width: 1200px;
 	
 }
+
+
+
+.fliter-list{
+	color: blue;
+	background-color: greenyellow;
+	font-size: 25px;
+	font-family: var(--font3);
+	text-align: center;
+	padding:80px 60px 80px 60px;
+	margin-left: 40px;
+	cursor: pointer;
+	border: 4px solid blue;
+	border-radius: 50%;;
+
+	
+}
+
+.fliter-list:hover{
+	color:greenyellow;
+	background-color: blue;
+	border:4px solid white;
+}
+nav{
+	padding-top:60em;
+
+}
+
+.list-box{
+	margin-top:5rem;
+	width:100%;
+	height:auto;
+	padding:10rem;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.display {
+	color: blue;
+	background-color: greenyellow;
+	font-size: calc(var(--font-size) * 1.4);
+	font-family: var(--font3);
+	padding:20px;
+	width:100%;
+	text-align: center;
+	display: block;
+	cursor: pointer;
+	margin-top:-40px;
+	border:4px solid blue;
+	
+}
+
+.display:hover{
+	color:greenyellow;
+	background-color: blue;
+	border:4px solid white;
+	
+}
+
+/* Moral button*/
+
+/* I wanted to make pop-up moral forr channel-description */
+/* I found this tool: https://developer.mozilla.org/en-US/play, */
+/* I understans how it works with Javasrtipt and good to understand what is "Dialog" is. */
 
 button{
 	font-size:calc(var(--font-size)*3);
@@ -580,8 +625,11 @@ dialog{
 	
 }
 
+/* image_ Skew w different angle */
 
-
+/* I wanted to change skew for blocks because of the consistancy! */
+/* I found this tool: https://css-tricks.com/almanac/properties/t/transform/,https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child */
+/* this skew and nth-child is easy to make it at once. */
 
 #channel-blocks li:nth-child(3n+1) {
     transform: skewX(18deg);
@@ -592,9 +640,7 @@ dialog{
 #channel-blocks li:nth-child(3n+3) {
     transform: skewY(18deg);
 }
-/* #channel-blocks li:nth-child(4n+4) {
-    transform: skewX(-18deg);
-} */
+
 
 #channel-count{
 	text-align: center;
@@ -622,7 +668,6 @@ dialog{
 }
 
 #channel-description{
-	/* background-color: blue; */
 	display:block;
 	color:blue;
 	text-align: center;
@@ -632,7 +677,6 @@ dialog{
 	margin: 2rem;
 	box-sizing: border-box;
 	border-radius: 20px;
-	/* border: 4px solid greenyellow; */
 	line-height: 1.4;
 	height:auto;
 }
@@ -645,9 +689,7 @@ dialog{
 }
 
 
-/* #channel-blocks p.text-created{
-	display:none;
-} */
+
 
 #channel-title{
 	background-color: greenyellow;
@@ -707,17 +749,17 @@ li>audio{
 }
 
 h1{
-font-family:var(--font);
-margin-top:-5rem;
-margin-bottom: 3rem;
-font-weight: 400;;
-color:blue;
--webkit-text-stroke-color: greenyellow;
--webkit-text-stroke-width: 4px;
-margin-left: 5rem;
-margin-right:12rem;
-align-items: center;
-font-size: calc(var(--font-size)*10);
+	font-family:var(--font);
+	margin-top:-5rem;
+	margin-bottom: 3rem;
+	font-weight: 400;;
+	color:blue;
+	-webkit-text-stroke-color: greenyellow;
+	-webkit-text-stroke-width: 4px;
+	margin-left: 5rem;
+	margin-right:12rem;
+	align-items: center;
+	font-size: calc(var(--font-size)*10);
 
 }
 
@@ -751,7 +793,6 @@ li{
 	display:grid;
 	flex-direction: column;
 	height:70vh;
-	/* text-align: center; */
 	list-style: none;
 	
 }
@@ -766,16 +807,12 @@ svg{
 	}
 }
 
-/* .image-block img{
+/* Rotated cube*/
 
-	display:block;
-	width:100%;
-	height:80%;
-	border-radius: 50%;
-	overflow: hidden;
-	aspect-ratio: 2/1;
-	object-fit:cover;
-} */
+/* I wanted to make rotated cube with random images */
+/* I found this tool: https://labex.io/tutorials/css-3d-rotating-cube-165641, and CHATGPT */
+/* I understans how it works and good to understand based on multiple elements such as height, width and angles etc. */
+
 .scene {
     width: 100vw;
     height: 50vw;
@@ -795,9 +832,7 @@ header{
 .cube {
     width: 500px;
     height: 500px;
-    /* position: relative; */
     transform-style: preserve-3d;
-	/* transform: rotateX(0deg) rotateY(0deg); */
     animation: rotateCube 12s infinite linear;
 	transform-origin: center;
 	margin:0 auto;
@@ -805,7 +840,7 @@ header{
 	top:0%;
 	left:35%;
 	z-index:1;
-	transform: translate(-50%.-50%);
+	transform: translate(-50%, -50%);
 }
 
 @keyframes rotateCube {
@@ -824,8 +859,7 @@ header{
     position: absolute;
     width: 100%;
     height: 100%;
-    /* background: rgba(255, 255, 255, 0.3); */
-    /* border: 2px solid; */
+   
     background-size: cover;
     background-position: center;
     display: flex;
@@ -853,7 +887,6 @@ section{
 
 footer{
 	display:flex;
-	/* background-color: greenyellow; */
 	color:white;
 	font-family: Arial, Helvetica, sans-serif;
 	justify-content: space-between;
@@ -878,6 +911,5 @@ footer{
 	justify-content: center;
 	margin-right:1rem;
 
-
-
+}
 }
