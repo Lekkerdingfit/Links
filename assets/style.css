@@ -105,12 +105,8 @@ dialog{
     color: black;
 }
 
-dialog::backdrop{
-	width:50%;
-	height:auto;
-	align-items: center;
 
-}
+
 
 #channel-blocks{
 	gap:50px;
@@ -523,13 +519,6 @@ dialog{
 	
 }
 
-dialog::backdrop{
-	width:50%;
-	height:auto;
-	align-items: center;
-	
-
-}
 
 
 
